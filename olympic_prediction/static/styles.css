@@ -1,0 +1,160 @@
+/* General Styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f9fafc;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid #e3e7ed;
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4682b4;
+    margin-bottom: 30px;
+}
+
+h2, h3 {
+    text-align: center;
+    color: #4682b4;
+    margin: 20px 0;
+}
+
+/* Form Styling */
+form {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+label {
+    display: block;
+    font-size: 1.2rem;
+    color: #4682b4;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 80%;
+    max-width: 400px;
+    padding: 12px;
+    border: 2px solid #b2c8df;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 12px 30px;
+    background-color: #5f9ea0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4682b4;
+}
+
+/* Output Container */
+.output-container {
+    display: flex;
+    flex-direction: column; /* Change to column layout */
+    align-items: center; /* Center items */
+    margin-top: 20px;
+}
+
+/* Results Section */
+.results {
+    width: 100%; /* Ensure it uses full width */
+}
+
+table {
+    width: 100%; /* Use full width of the container */
+    border-collapse: collapse;
+    margin: 5% 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    background-color: #fafafa;
+}
+
+th, td {
+    padding: 12px; /* Reduced padding for smaller table size */
+    text-align: center;
+    font-size: 0.9rem; /* Smaller font size */
+}
+
+th {
+    background-color: #f0f8ff;
+    color: #333;
+    font-weight: 600;
+    border-bottom: 3px solid #b2c8df;
+}
+
+td {
+    border-bottom: 1px solid #e3e7ed;
+    color: #555;
+}
+
+tr:nth-child(even) {
+    background-color: #f7fafd;
+}
+
+tr:hover {
+    background-color: #f0faff;
+}
+
+/* Power BI Report Section */
+.powerbi-report-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center contents horizontally */
+    margin-top: 20px; /* Add some spacing from the histogram */
+}
+
+iframe {
+    width: 100%; /* Make the iframe responsive */
+    height: 600px; /* Set a height for better visibility */
+    max-width: 900px; /* Optional: limit the width of the iframe */
+    border: none; /* Optional: Remove the border */
+}
+
+/* Error Message */
+.error {
+    color: #ff6b6b;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Image Styling */
+img {
+    display: block;
+    max-width: 100%;
+    margin: 30px auto;
+    border-radius: 12px;
+    border: 3px solid #b2c8df;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #888;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympic Medal Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Olympic Medal Prediction</h1>
+        <form method="POST">
+            <label for="sport">Enter the sport name:</label>
+            <input type="text" id="sport" name="sport" required>
+            <button type="submit">Predict</button>
+        </form>
+
+        <div class="output-container">
+            {% if sport %}
+                <div class="results">
+                    <h2>Results for {{ sport }}</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Country</th>
+                                <th>Total Participation</th>
+                                <th>Medals Won</th>
+                                <th>Win Percentage</th>
+                                <th>Naive Bayes Winning Chances</th>
+                                <th>Logistic Regression Winning Chances</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for result in results %}
+                            <tr>
+                                <td>{{ result['Team'] }}</td>
+                                <td>{{ result['total_participation'] }}</td>
+                                <td>{{ result['medals_won'] }}</td>
+                                <td>{{ result['win_percentage'] }}</td>
+                                <td>{{ result['winning_chance_naive_bayes'] }}%</td>
+                                <td>{{ result['winning_chance_logistic'] }}%</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                    <h3>Model Accuracy</h3>
+                    <p>Naive Bayes Accuracy: {{ naive_accuracy }}%</p>
+                    <p>Logistic Regression Accuracy: {{ logistic_accuracy }}%</p>
+                    <p>The more accurate model is: <strong>{{ more_accurate }}</strong></p>
+
+                    <h3>Win Percentage Histogram</h3>
+                    <img src="{{ url_for('static', filename='histogram.png') }}" alt="Win Percentage Histogram">
+
+                    <!-- Move the Power BI report below the histogram -->
+                    <div class="powerbi-report-container">
+                        <h2>Power BI Report</h2>
+                        <iframe src="https://app.powerbi.com/reportEmbed?reportId=a94f7be8-7199-4461-b72a-55430628dd61&autoAuth=true&ctid=c7b00d7f-ad99-442a-b12f-c2c912044fdc" frameborder="0" allowFullScreen="true"></iframe>
+                    </div>
+
+                    <div class="powerbi-report-container">
+                        <h2>Power BI Report</h2>
+                        <iframe src="https://app.powerbi.com/reportEmbed?reportId=1c29f4cf-be93-4f84-b71e-c3d5668821ac&autoAuth=true&ctid=c7b00d7f-ad99-442a-b12f-c2c912044fdc"></iframe>
+                    </div>
+
+                </div>
+
+            {% elif error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
